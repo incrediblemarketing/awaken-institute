@@ -1,9 +1,72 @@
 .site-nav {
-	
-	.sub-menu {display:none;}
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 60px;
+  z-index: 999;
+  align-items: center;
 
-	// offset if WP admin bar is present
-	.admin-bar & {top:46px;
-		@media (min-width: 783px) {top:32px;}
-	}
+  button {
+    background: none;
+    padding: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 93px;
+
+    .span__holder {
+      display: flex;
+      flex-direction: column;
+      height: 19px;
+      width: 25px;
+      justify-content: space-between;
+      margin-right: 20px;
+
+      span {
+        height: 3px;
+        background: $off-black;
+        width: 100%;
+      }
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.2em;
+      letter-spacing: 0.25px;
+      text-transform: uppercase;
+      color: $black;
+      font-weight: 600;
+    }
+    &:focus {
+      outline: none;
+      p {
+        color: $primary;
+      }
+    }
+  }
+
+  .btn-primary {
+    margin-left: auto;
+
+    i {
+      @include mq(lg) {
+        display: none;
+      }
+    }
+  }
+
+  .sub-menu {
+    display: none;
+  }
+
+  // offset if WP admin bar is present
+  .admin-bar & {
+    top: 46px;
+    @media (min-width: 783px) {
+      top: 32px;
+    }
+  }
 }
