@@ -1,0 +1,76 @@
+.block--services {
+  padding: 200px 0 220px;
+  background: url(/wp-content/uploads/2020/03/pattern-top-left.jpg) top left /
+    cover no-repeat;
+  text-align: center;
+
+  h5 {
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    margin-bottom: 80px;
+  }
+  .slider--services {
+    overflow: visible;
+
+    .swiper-slide {
+      overflow: hidden;
+      opacity: 0.3;
+      transition: opacity 0.6s ease-in-out;
+
+      .image__holder {
+        overflow: hidden;
+        border-radius: 0 60px;
+        margin-bottom: 35px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      h6 {
+        font-size: 1.63rem;
+        line-height: 1.19em;
+        color: $off-black;
+        font-weight: 600;
+      }
+
+      &.swiper-slide-active,
+      &.swiper-slide-next,
+      &.swiper-slide-prev {
+        opacity: 1;
+      }
+      &:hover {
+        h6 {
+          color: $primary;
+        }
+      }
+    }
+  }
+  .swiper-nav-container {
+    position: relative;
+    margin-top: 76px;
+    display: flex;
+    justify-content: center;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: relative;
+      top: unset;
+      left: unset;
+      right: unset;
+      width: 68px;
+      height: 68px;
+      border: 1px solid #626262;
+      color: #626262;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: unset !important;
+      border-radius: 100em;
+      margin: 0 15px;
+      cursor: pointer;
+    }
+  }
+}

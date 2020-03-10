@@ -12,7 +12,7 @@
  */
 
 add_image_size( 'blog_preview_thumb', 290, 175, true );
-add_image_size( 'featured_thumb', 535, 402, true );
+add_image_size( 'featured_thumb', 369, 450, true );
 add_image_size( 'parent_thumb', 715, 715, true );
 add_image_size( 'background_thumb', 1430, 569, true );
 add_image_size( 'hero_thumb', 1920, 1080, true );

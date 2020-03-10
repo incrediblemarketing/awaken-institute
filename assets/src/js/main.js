@@ -220,9 +220,11 @@
           }
         },
         swiperSetup: function() {
-          var gallery_block = new Swiper(".swiper__gallery", {
-            slidesPerView: 1,
+          var services_slider = new Swiper(".slider--services", {
+            slidesPerView: 3,
             loop: true,
+            centeredSlides: true,
+            spaceBetween: 30,
             navigation: {
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"

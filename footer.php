@@ -20,7 +20,16 @@
 	$phone        = get_field( 'business_phone_display', 'option' );
 	$phone_url    = get_field( 'business_phone_url', 'option' );
 ?>
-
+<section class="block block--schedule_consultation">
+	<div class="block__content">
+		<div class="container">
+			<div class="col-10">
+				<h2>Schedule Consultation</h2>
+				<?php echo do_shortcode( '[gravityforms id="1" title="false" desription="false" ajax="true"]' ); ?>
+			</div>
+		</div>
+	</div>
+</section>
 <footer class="footer bg-light">
 	<?php get_template_part( 'components/social-icons' ); ?>
 	<?php if ( $phone_url && $phone ) : ?>
