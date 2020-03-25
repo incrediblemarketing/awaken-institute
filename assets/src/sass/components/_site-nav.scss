@@ -9,6 +9,7 @@
   padding: 35px 60px;
   z-index: 999;
   align-items: center;
+  transition: all 0.4s ease-in-out;
 
   button {
     background: none;
@@ -67,6 +68,16 @@
     top: 46px;
     @media (min-width: 783px) {
       top: 32px;
+    }
+  }
+
+  &.sticky {
+    background: $white;
+    box-shadow: rgba($black, 0.2) 4px 4px 19px;
+    padding: 0 15px;
+
+    .awaken-logo {
+      padding: 5px 0;
     }
   }
 }

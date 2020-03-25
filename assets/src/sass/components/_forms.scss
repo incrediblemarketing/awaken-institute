@@ -1,82 +1,109 @@
 .gform_wrapper {
-    ul.gform_fields {
-        li.gfield {
-            padding: 0 !important;
-            margin: 0 0 50px;
-            label {
-                display: none;
-            }
-            div.ginput_container {
-                margin: 0 !important;
-                position: relative;
-                input,
-                textarea {
-                    margin: 0;
-                    width: 100%;
-                    padding: 0 0 19px 50px !important;
-                    background: transparent;
-                    font-size: 1.125rem !important;
-                    line-height: 24px;
-                    text-transform: uppercase;
-                    font-weight: 500;
-                    border: none;
-                    border-bottom: 1px solid #414141;
-                    color: $white;
-                    &:focus {
-                        outline: none;
-                        border-bottom: 1px solid #8e8e8e;
-                    }
-                }
-                textarea {
-                    height: 172px;
-                }
-            }
-        }
-    }
-    .gform_footer {
-        padding: 0 !important;
+  ::placeholder {
+    color: #bcbcbc;
+  }
+  ul.gform_fields {
+    li.gfield {
+      padding: 0 !important;
+      margin: 0 auto 20px !important;
+      display: flex;
+      justify-content: center;
+      width: 970px;
+      max-width: 100%;
+      align-items: center;
+
+      label,
+      div.ginput_container {
+        width: 50%;
+      }
+      label {
+        text-align: right;
+        padding-right: 30px;
+        font-size: 1.36rem;
+        line-height: 1.2em;
+        color: #626262;
+        font-weight: normal;
+      }
+      div.ginput_container {
+        padding-left: 30px;
         margin: 0 !important;
-        text-align: center;
+        position: relative;
+        input,
+        textarea,
+        select {
+          margin: 0;
+          width: 100%;
+          padding: 0 0 16px !important;
+          background: transparent;
+          font-size: 2.72rem !important;
+          line-height: 1.2em;
+          font-weight: normal;
+          border: none;
+          border-bottom: 1px solid #eff4f0;
+          color: $off-black;
+          border-radius: 0;
+          -webkit-appearance: none;
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid $primary;
+          }
+        }
+        select {
+          height: 88px;
+          &:focus {
+            font-size: 1rem !important;
+          }
+        }
+        textarea {
+          height: 172px;
+        }
+      }
     }
-    &.gform_validation_error {
-        .validation_error {
-            background: $error;
-            color: $white;
-            font-size: 1.1rem;
-            font-weight: 500;
-            padding: 15px;
-            border: none;
-        }
-        .validation_message {
-            color: $error;
-            font-weight: 300;
-        }
-        ul.gform_fields {
-            li.gfield.gfield_error {
-                border: none;
-                margin-bottom: 0 !important;
-                background: transparent;
-                color: $error;
-                input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
-                textarea {
-                    border: 1px solid $error;
-                    margin-bottom: 0;
-                    padding: 19px 10px 19px 50px !important;
-                }
-                .ginput_container {
-                    &::before {
-                        left: 11px;
-                        top: 20px;
-                    }
-                }
-                div.gfield_description {
-                    padding: 0 !important;
-                    color: $error;
-                    text-transform: uppercase;
-                    font-size: 1.1rem;
-                    font-weight: 400;
-                }
-            }
-        }
+  }
+  .gform_footer {
+    padding: 0 !important;
+    margin: 60px 0 0 !important;
+    text-align: center !important;
+  }
+  &.gform_validation_error {
+    .validation_error {
+      background: $error;
+      color: $white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 15px;
+      border: none;
     }
+    .validation_message {
+      color: $error;
+      font-weight: 300;
+    }
+    ul.gform_fields {
+      li.gfield.gfield_error {
+        border: none;
+        margin-bottom: 0 !important;
+        background: transparent;
+        color: $error;
+        input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+        textarea {
+          border: 1px solid $error;
+          margin-bottom: 0;
+          padding: 19px 10px 19px 50px !important;
+        }
+        .ginput_container {
+          &::before {
+            left: 11px;
+            top: 20px;
+          }
+        }
+        div.gfield_description {
+          padding: 0 !important;
+          color: $error;
+          text-transform: uppercase;
+          font-size: 1.1rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
 }

@@ -17,7 +17,7 @@
 
 ?>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row padding--section">
 		<div class="col-xl-12">
 		<h5><?php echo esc_attr( $top_title ); ?></h5>

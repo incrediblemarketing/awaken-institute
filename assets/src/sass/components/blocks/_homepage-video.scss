@@ -7,7 +7,7 @@
   &::before {
     content: "";
     height: 68px;
-    background: $white url(/wp-content/uploads/2020/03/pattern-opp.jpg);
+    background: $white;
     background-repeat: no-repeat;
     background-position: bottom right;
     position: absolute;
@@ -18,7 +18,7 @@
   }
 
   .padding--section {
-    padding: 292px 0 308px;
+    padding: 444px 0 357px;
   }
 
   .image--background {
@@ -35,7 +35,7 @@
       left: 0;
       object-fit: cover;
       height: auto;
-      opacity: 0.76;
+      opacity: 0.15;
     }
   }
 

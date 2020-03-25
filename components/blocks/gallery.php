@@ -13,19 +13,51 @@
 
 	$block_title = get_sub_field( 'block_title' );
 	$back_image  = get_sub_field( 'background_image' );
+	$right_image = get_sub_field( 'right_image' );
 
 ?>
 
-<div class="container">
-	<?php if ( ! empty( $back_image ) ) : ?>
-		<div class="image--background">
-			<img src="<?php echo esc_url( $back_image['url'] ); ?>" alt="<?php echo esc_attr( $back_image['alt'] ); ?>" class="image--back" />
+<div class="container-fluid">
+	<div class="row block--gallery-top">
+		<div class="col-xl-10 col-12">
+			<?php if ( ! empty( $back_image ) ) : ?>
+				<div class="image--background">
+					<img src="<?php echo esc_url( $back_image['url'] ); ?>" alt="<?php echo esc_attr( $back_image['alt'] ); ?>" class="image--back" />
+				</div>
+			<?php endif; ?>
+			<div class="row padding--section">
+				<div class="col-xl-6 offset-xl-6 content--area">
+					<h5>Gallery</h5>
+					<h2><?php echo esc_attr( $block_title ); ?></h2>
+					<div class="line">
+						<a href="/gallery/" class="btn btn-primary">Browse Gallery</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	<?php endif; ?>
-	<div class="row padding--section">
-		<div class="col-xl-6 col-12">
-			<h2><?php echo esc_attr( $block_title ); ?></h2>
-			<a href="/gallery/" class="btn btn-secondary">Enter Gallery</a>
+	</div>
+	<div class="row block--gallery-quote">
+		<div class="col-xl-4 offset-xl-1">
+		<?php
+		$testimonial = get_sub_field( 'testimonial' );
+		if ( $testimonial ) :
+			$post = $testimonial;
+			setup_postdata( $post );
+			?>
+					<div class="block--quote">
+						<?php get_template_part('components/svg/quote-left'); ?>
+						<h3><?php the_title(); ?></h3>
+						<?php the_content(); ?>
+					</div>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+		</div>
+		<div class="col-xl-6 offset-xl-1">
+			<?php if ( ! empty( $right_image ) ) : ?>
+				<div class="image--holder">
+					<img src="<?php echo esc_url( $right_image['url'] ); ?>" alt="<?php echo esc_attr( $right_image['alt'] ); ?>" class="image--back" />
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>

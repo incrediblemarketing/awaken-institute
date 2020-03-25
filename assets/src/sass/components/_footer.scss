@@ -1,1 +1,202 @@
-.im-logo {height:1em; display:inline-block; margin-top:-.1em; fill:currentColor; vertical-align:middle;}
+.im-logo {
+  height: 1em;
+  display: inline-block;
+  margin-top: -0.1em;
+  fill: $white;
+  vertical-align: middle;
+  background: $magenta;
+  border-radius: 100em;
+  padding: 1.5px;
+}
+
+.block--schedule_consultation {
+  text-align: center;
+  position: relative;
+  padding-top: 160px;
+  z-index: 0;
+  padding-bottom: 64vh;
+
+  .brush-1 {
+    position: absolute;
+    top: -80px;
+    left: 0;
+  }
+
+  .brush-2 {
+    position: absolute;
+    top: 209px;
+    right: 0;
+  }
+
+  h3 {
+    font-size: 4.5454rem;
+    line-height: 1.1em;
+    color: $black;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: capitalize;
+    position: relative;
+    letter-spacing: 0;
+    z-index: 0;
+    margin-bottom: 47px;
+
+    &::after {
+      content: url(/wp-content/themes/awaken/assets/src/img/brush-stroke2.svg);
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      width: 486px;
+      max-width: 100%;
+      transform: translateX(-50%);
+      height: 106px;
+      z-index: -1;
+    }
+  }
+  .image--background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.block--footer {
+  background: linear-gradient(
+    transparent 0%,
+    transparent 50%,
+    $off-black 50%,
+    $off-black 100%
+  );
+  text-align: center;
+  padding-bottom: 100px;
+  margin-top: -54vh;
+
+  a {
+    color: $white;
+    &:hover {
+      color: $primary;
+    }
+  }
+  .awaken-logo {
+    margin: 101px 0 35px;
+    opacity: 0.4;
+    path {
+      fill: $white;
+    }
+  }
+
+  h3 {
+    margin-left: 150px;
+    text-align: left;
+    font-size: 2.5rem;
+    line-height: 1.16em;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 78px;
+  }
+
+  .grid--contact {
+    display: grid;
+    grid-template-columns: auto 487px;
+    background: $white;
+    text-align: left;
+    box-shadow: 0px 0px 50px rgba(35, 31, 32, 0.13);
+
+    .form--area {
+      padding: 90px;
+
+      .gform_wrapper {
+        ul.gform_fields {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 40px 51px;
+          li.gfield {
+            width: 100%;
+            text-align: left;
+            display: block;
+            margin: 0 !important;
+            &#field_2_1,
+            &#field_2_4 {
+              grid-column: span 2;
+            }
+            label {
+              text-align: left;
+              font-size: 16px;
+              line-height: 19px;
+              color: #9b9b9b;
+              font-weight: 600;
+              margin: 0 0 10px;
+              padding: 0;
+              width: 100%;
+            }
+            div.ginput_container {
+              padding: 0;
+              width: 100%;
+              input,
+              textarea {
+                font-size: 22px !important;
+                line-height: 26px;
+                width: 100%;
+              }
+              textarea {
+                height: 70px;
+              }
+            }
+          }
+        }
+        .gform_footer {
+          margin-top: 40px !important;
+          text-align: right !important;
+        }
+      }
+    }
+  }
+
+  .contact--info {
+    background: #eff4f0;
+    padding: 90px 99px;
+    p {
+      margin: 0;
+      line-height: 1.18em;
+      color: #626262;
+
+      strong {
+        font-weight: 600;
+        font-size: 0.9rem;
+        line-height: 1.2em;
+      }
+    }
+    .item {
+      padding-left: 45px;
+      position: relative;
+      border-bottom: 1px solid #dce0dc;
+      padding-bottom: 29px;
+
+      i {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+      }
+
+      &:not(:first-of-type) {
+        padding-top: 29px;
+        i {
+          top: 35px;
+        }
+      }
+      &:last-of-type {
+        border: 0;
+      }
+    }
+  }
+  .copyright {
+    font-size: 18px;
+    line-height: 22px;
+    color: #9b9b9b;
+
+    span {
+      margin: 0 3px;
+    }
+  }
+}

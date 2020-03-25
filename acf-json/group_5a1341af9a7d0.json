@@ -846,32 +846,8 @@
                         },
                         {
                             "key": "field_5e59b413c43bb",
-                            "label": "Right Background Image",
-                            "name": "right_background_image",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_5e59b422c43bc",
-                            "label": "Right Front Image",
-                            "name": "right_front_image",
+                            "label": "Background Image",
+                            "name": "background_image",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -1258,7 +1234,7 @@
                 "layout_5e618c68c9573": {
                     "key": "layout_5e618c68c9573",
                     "name": "gallery",
-                    "label": "Gallery",
+                    "label": "Gallery \/ Quote Block",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1337,6 +1313,66 @@
                             "key": "field_5e618c68c9579",
                             "label": "Background Image",
                             "name": "background_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5e790f4f12f12",
+                            "label": "Quote Block",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5e790f6212f13",
+                            "label": "Testimonial",
+                            "name": "testimonial",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": "",
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_5e790f7312f14",
+                            "label": "Right Image",
+                            "name": "right_image",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -1650,5 +1686,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583451294
+    "modified": 1584992125
 }

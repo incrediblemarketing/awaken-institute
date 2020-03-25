@@ -12,7 +12,7 @@
  */
 
 add_image_size( 'blog_preview_thumb', 290, 175, true );
-add_image_size( 'featured_thumb', 369, 450, true );
+add_image_size( 'featured_thumb', 547, 450, true );
 add_image_size( 'parent_thumb', 715, 715, true );
 add_image_size( 'background_thumb', 1430, 569, true );
 add_image_size( 'hero_thumb', 1920, 1080, true );
@@ -83,8 +83,8 @@ function im_get_all_image_sizes() {
 			'height' => 175,
 		),
 		'featured_thumb'     => array(
-			'width'  => 535,
-			'height' => 402,
+			'width'  => 547,
+			'height' => 450,
 		),
 		'parent_thumb'       => array(
 			'width'  => 715,

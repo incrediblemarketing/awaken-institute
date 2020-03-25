@@ -11,15 +11,18 @@
  * @since      1.0.0
  */
 
-	$content     = get_sub_field( 'content' );
-	$front_image = get_sub_field( 'right_front_image' );
-	$back_image  = get_sub_field( 'right_background_image' );
+	$content = get_sub_field( 'content' );
+	$image   = get_sub_field( 'background_image' );
 
 ?>
-
-<div class="container">
-	<div class="row align-items-end ">
-		<div class="col-xl-7 pr-0 hero-content">
+<?php if ( ! empty( $image ) ) : ?>
+	<div class="image--holder">
+		<img src="<?php echo esc_url( $image['sizes']['hero_thumb'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+	</div>
+<?php endif; ?>
+<div class="container-fluid">
+	<div class="row align-items-end">
+		<div class="col-xl-5 offset-xl-1 hero-content">
 			<?php echo $content; ?>
 			<a href="/contact/" class="btn btn-primary">Schedule Consultation</a>
 			<a href="#block-5e603523d1836" class="js-scroll-to">
@@ -28,18 +31,6 @@
 					<p>Explore More</p>
 				</div>
 			</a>
-		</div>
-		<div class="col-xl-5 hero-image pl-0">
-			<div class="image__holder">
-				<?php if ( ! empty( $back_image ) ) : ?>
-					<div class="image__crop">
-						<img src="<?php echo esc_url( $back_image['url'] ); ?>" alt="<?php echo esc_attr( $back_image['alt'] ); ?>" class="image--back" />
-					</div>
-				<?php endif; ?>
-				<?php if ( ! empty( $front_image ) ) : ?>
-					<img src="<?php echo esc_url( $front_image['url'] ); ?>" alt="<?php echo esc_attr( $front_image['alt'] ); ?>" class="image--front" />
-				<?php endif; ?>
-			</div>
 		</div>
 	</div>
 	<?php get_template_part( 'components/social-icons' ); ?>

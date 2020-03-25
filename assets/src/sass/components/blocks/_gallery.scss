@@ -1,20 +1,13 @@
 .block--gallery {
-  text-align: center;
   h2 {
     color: $white;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
   }
   .container {
     position: relative;
   }
   .image--background {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% + 380px);
-    height: 100%;
-    border-radius: 0 60px;
+    @include absolute_cover;
     overflow: hidden;
 
     img {
@@ -24,9 +17,72 @@
     }
   }
   .padding--section {
-    padding: 270px 0 384px;
+    padding: 175px 0 381px;
   }
   .btn {
     margin: 0 auto;
+  }
+  .content--area {
+    padding-left: 88px;
+    position: relative;
+    padding-right: 0;
+
+    h5 {
+      position: absolute;
+      left: -10px;
+      top: 0;
+      transform: rotate(-90deg) translate(-50%, -50%);
+      margin: 0;
+    }
+  }
+  .line {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #626262;
+    }
+  }
+}
+.block--gallery-quote {
+  .image--holder {
+    transform: translateY(-253px);
+    margin-bottom: -253px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .block--quote {
+    padding-top: 114px;
+    padding-left: 110px;
+    position: relative;
+
+    .quote {
+      position: absolute;
+      left: 0;
+    }
+
+    h3 {
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 31px;
+        height: 1px;
+        background: #c9c9c9;
+        position: absolute;
+        left: -51px;
+        top: 13px;
+      }
+    }
   }
 }

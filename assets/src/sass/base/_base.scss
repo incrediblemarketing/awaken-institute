@@ -5,7 +5,7 @@ html {
 
 body {
   font-size: 1rem;
-  line-height: 1.1818em;
+  line-height: 1.63em;
   color: $gray;
   font-family: $agenda_condensed;
 }
@@ -72,8 +72,12 @@ h1 {
 }
 
 h2 {
-  font-size: 3.63rem;
-  line-height: 1.2em;
+  font-size: 2.5rem;
+  line-height: 1.16em;
+  letter-spacing: 0.16em;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -89,4 +93,11 @@ h5 {
   color: $light-gray;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+.home {
+  .container-fluid {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
