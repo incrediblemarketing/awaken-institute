@@ -1,0 +1,67 @@
+.block--inner_tree_bg_area {
+  padding: 251px 0 257px;
+  background: url(/wp-content/uploads/2020/05/gray-bg.jpg) no-repeat center /
+    cover;
+
+  p {
+    padding-right: 3vw;
+  }
+
+  .box--area {
+    background: $white;
+    padding: 50px;
+
+    h3 {
+      font-weight: 600;
+      font-size: 1.36rem;
+      line-height: 1.2em;
+      text-transform: initial;
+      color: $off-black;
+      letter-spacing: 0;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        margin-bottom: 5px;
+        padding-left: 35px;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.63em;
+        color: $gray;
+
+        &:before {
+          content: "\f14a";
+          font-family: $fontawesome;
+          display: block;
+          color: $green;
+          font-size: 25px;
+          position: absolute;
+          left: 0;
+          top: 1px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .flex--boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+
+  .flex-row-reverse {
+    .content--area {
+      padding-left: 65px;
+      p {
+        padding: 0;
+      }
+    }
+  }
+}

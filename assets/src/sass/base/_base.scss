@@ -1,5 +1,5 @@
 html {
-  background: white;
+  background: #e5e5e5;
   font-size: 22px;
 }
 
@@ -78,6 +78,15 @@ h2 {
   font-weight: 300;
   font-style: normal;
   text-transform: uppercase;
+
+  body:not(.home) & {
+    font-weight: 300;
+    font-size: 2.18rem;
+    line-height: 1.25em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
 }
 
 h3 {
@@ -93,11 +102,15 @@ h5 {
   color: $light-gray;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+
+  body:not(.home) & {
+    font-weight: 600;
+    color: $gray;
+    margin-bottom: 30px;
+  }
 }
 
-.home {
-  .container-fluid {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
+.container-fluid {
+  padding-left: 100px;
+  padding-right: 100px;
 }

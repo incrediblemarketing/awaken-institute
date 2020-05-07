@@ -18,8 +18,11 @@
 		<?php get_template_part( 'components/svg/logo' ); ?>
 	</a>
 	<button data-toggle="menu">
-		<span></span>
-		<span></span>
+		<div class="span__holder">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	</button>
 
 	<?php

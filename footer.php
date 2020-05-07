@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer
+ * Footer Inner Page
  *
  * Main footer file for the theme.
  *
@@ -13,68 +13,22 @@
  * @since      1.0.0
  */
 
-	$copyright    = get_field( 'copyright', 'option' );
-	$address      = get_field( 'business_street_address', 'option' );
-	$address2     = get_field( 'business_city_state_zip', 'option' );
-	$address_link = get_field( 'business_address_link', 'option' );
-	$phone        = get_field( 'business_phone_display', 'option' );
-	$phone_url    = get_field( 'business_phone_url', 'option' );
-	$hours        = get_field( 'business_hours', 'option' );
-	$map_image    = get_field( 'map_image', 'option' );
+	$copyright = get_field( 'copyright', 'option' );
 ?>
-<section class="block block--schedule_consultation">
-	<?php get_template_part( 'components/svg/brush-1' ); ?>
-	<?php get_template_part( 'components/svg/brush-2' ); ?>
-	<div class="block__content">
-		<div class="container-fluid">
-			<div class="row justify-content-center">
-				<div class="col-xl-8">
-					<h3>Schedule Consultation</h3>
-					<?php echo do_shortcode( '[gravityforms id="1" title="false" desription="false" ajax="true"]' ); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php if ( ! empty( $map_image ) ) : ?>
-		<div class="image--background">
-			<img src="<?php echo esc_url( $map_image['url'] ); ?>" alt="<?php echo esc_attr( $map_image['alt'] ); ?>" class="image--back" />
-		</div>
-	<?php endif; ?>
-</section>
-<footer class="footer block--footer">
+
+<footer class="footer block--footer-small">
 	<div class="container-fluid">
 		<div class="row justify-content-center">
-			<div class="col-xl-10">
-				<h3>Get In Touch</h3>
-				<div class="grid--contact">
-					<div class="form--area">
-						<?php echo do_shortcode( '[gravityforms id="2" title="false" ajax="true" description="false"]' ); ?>
-					</div>
-					<div class="contact--info">
-						<?php if ( $hours ) : ?>
-							<div class="item">
-								<i class="fal fa-clock"></i>
-								<p><strong>Hours of Operation</strong></p>
-								<p><?php echo esc_attr( $hours ); ?></p>
-							</div>
-						<?php endif; ?>
-						<?php if ( $address ) : ?>
-							<div class="item">
-								<i class="fal fa-map-marker-alt"></i>
-								<p><strong>Office Address</strong></p>
-								<p><?php echo esc_attr( $address ); ?><br/><?php echo esc_attr( $address2 ); ?></p>
-							</div>
-						<?php endif; ?>
-						<?php if ( $phone ) : ?>
-							<div class="item">
-								<i class="fal fa-phone"></i>
-								<p><strong>Phone Number</strong></p>
-								<p><?php echo esc_attr( $phone ); ?></p>
-							</div>
-						<?php endif; ?>
-					</div>
+			<?php if ( ! is_page( array( 228, 230 ) ) ) : ?>
+				<div class="col-lg-10">
+					<h5>Let's Get Together</h5>
+					<h3>Book An Appointment</h3>
+					<p>Contact us today at <?php echo do_shortcode( '[call_number]' ); ?> to book your appointment or if you have any questions regarding Neurotoxin Injectables.</p>
+					<a href="/contact-us/" class="btn btn-primary">Schedule Consultation</a>
 				</div>
-			</div>
+			<?php else : ?>
+				<div class="spacer"></div>
+			<?php endif; ?>
 			<div class="col-12 copyright">
 				<?php get_template_part( 'components/svg/logo' ); ?>
 				<p>&copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?>. <a href="/privacy-policy/">Privacy Policy</a> <span>|</span> <a href="/terms-of-use/">Terms of Use</a> <span>|</span> Designed By <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part( 'components/svg/incredible-marketing' ); ?>Incredible Marketing</a></p>

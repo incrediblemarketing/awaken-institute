@@ -12,12 +12,15 @@
   transition: all 0.4s ease-in-out;
 
   button {
-    background: none;
+    width: 75px;
+    height: 71px;
+    background: $off-black;
     padding: 0;
     border: 0;
     display: flex;
     align-items: center;
-    margin-left: 93px;
+    justify-content: center;
+    margin-left: 15px;
 
     .span__holder {
       display: flex;
@@ -25,11 +28,10 @@
       height: 19px;
       width: 25px;
       justify-content: space-between;
-      margin-right: 20px;
 
       span {
         height: 3px;
-        background: $off-black;
+        background: $white;
         width: 100%;
       }
     }
@@ -49,8 +51,21 @@
     }
   }
 
-  .btn-primary {
+  .call {
     margin-left: auto;
+    color: $white;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.15em;
+
+    i {
+      display: none;
+    }
+  }
+
+  .btn-primary {
+    margin-left: 45px;
 
     i {
       @include mq(lg) {
@@ -72,12 +87,33 @@
   }
 
   &.sticky {
-    background: $white;
+    background: url(/wp-content/uploads/2020/05/square-bg-1.jpg);
     box-shadow: rgba($black, 0.2) 4px 4px 19px;
     padding: 0 15px;
+    background-position: center;
 
     .awaken-logo {
       padding: 5px 0;
+    }
+
+    .call {
+      color: $off-black;
+    }
+  }
+
+  body:not(.home) & {
+    .awaken-logo {
+      path:not(:first-child) {
+        fill: $white;
+      }
+    }
+
+    &.sticky {
+      .awaken-logo {
+        path:not(:first-child) {
+          fill: $off-black;
+        }
+      }
     }
   }
 }

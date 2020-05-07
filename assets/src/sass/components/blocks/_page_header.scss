@@ -1,0 +1,82 @@
+.block--page_header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 308px;
+  z-index: 0;
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  h1 {
+    border-bottom: 2px solid $green;
+    padding: 0 0 35px 247px;
+    color: $white;
+  }
+
+  .image__holder {
+    @include absolute_cover();
+    z-index: -1;
+
+    img {
+      @include absolute_cover();
+    }
+  }
+
+  .grid--contact {
+    background: $white;
+    padding: 130px 167px;
+    position: absolute;
+    top: 464px;
+    right: 0;
+    display: grid;
+    grid-template-columns: 253px 1fr;
+    grid-gap: 40px;
+    width: 1107px;
+    box-shadow: 0px 0px 50px rgba(35, 31, 32, 0.15);
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .item {
+      margin-bottom: 60px;
+
+      strong {
+        color: $black;
+      }
+    }
+
+    .gform_wrapper {
+      ul.gform_fields {
+        li.gfield {
+          width: 100%;
+
+          div.ginput_container {
+            width: 100%;
+            padding: 0;
+
+            input,
+            textarea {
+              font-size: 1.81rem !important;
+              line-height: 1.2em;
+              border-bottom: 1px solid #d3d9d4;
+            }
+
+            textarea {
+              height: 188px;
+            }
+          }
+        }
+      }
+      .gform_footer {
+        text-align: left !important;
+        .btn {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

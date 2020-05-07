@@ -1,6 +1,6 @@
 <?php
 /**
- * Page.php
+ * Single Service
  *
  * @category   Components
  * @package    WordPress
@@ -21,8 +21,4 @@ get_header(); ?>
 <?php endif; ?>  
 
 <?php
-if ( is_front_page() ) :
-	get_footer( 'home' );
-else :
-	get_footer();
-endif;
+get_footer();

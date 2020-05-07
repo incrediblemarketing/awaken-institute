@@ -17,14 +17,14 @@
 	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<?php get_template_part( 'components/svg/logo' ); ?>
 	</a>
+	
+	<?php get_template_part( 'components/call' ); ?>
+	<a href="/contact-us/" class="btn btn-primary">Schedule Consultation</a>
 	<button data-toggle="menu">
 		<div class="span__holder">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
-		<p>Menu</p>
 	</button>
-
-	<?php get_template_part( 'components/call' ); ?>
 </nav>

@@ -21,7 +21,7 @@
 		<img src="<?php echo esc_url( $back_image['url'] ); ?>" alt="<?php echo esc_attr( $back_image['alt'] ); ?>" class="image--back" />
 	</div>
 <?php endif; ?>
-<div class="container">
+<div class="container-fluid">
 	<div class="row padding--section">
 		<div class="col-xl-12">
 				<div class="video__text">
