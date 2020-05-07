@@ -19,7 +19,7 @@
 	</a>
 	
 	<?php get_template_part( 'components/call' ); ?>
-	<a href="/contact-us/" class="btn btn-primary">Schedule Consultation</a>
+	<a href="/request-an-appointment/" class="btn btn-primary">Schedule Consultation</a>
 	<button data-toggle="menu">
 		<div class="span__holder">
 			<span></span>

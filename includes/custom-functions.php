@@ -340,25 +340,25 @@ add_action( 'admin_menu', 'move_page_admin_menu_item' );
  * @param array $query Query $args that will be changing.
  */
 function my_change_sort_order( $query ) {
-	if ( is_archive( 'gallery' ) ) :
+	if ( is_archive( 'gallery' ) && ! is_admin() ) :
 		$query->set( 'order', 'ASC' );
 		$query->set( 'orderby', 'menu_order' );
-		$query->set( 'posts_per_page', '-1' );
-
+		$query->set( 'posts_per_page', -1 );
 	endif;
 };
 add_action( 'pre_get_posts', 'my_change_sort_order' );
 
-/**
- * Call to get gallery info (AJAX)
- */
+// AJAX calls for the gallery
+add_action( 'wp_ajax_get_gallery_info', 'get_gallery_info' );
+add_action( 'wp_ajax_nopriv_get_gallery_info', 'get_gallery_info' );
+
 function get_gallery_info() {
 	global $wpdb;
+	global $gallerycount;
+	$gallerycount = 0;
 
-	if ( wp_verify_nonce( sanitize_key( $_GET['taxid'] ) ) ) {
-		$taxid = $_GET['taxid'];
-	}
-	if ( 0 === $taxid ) {
+	$taxid = $_GET['taxid'];
+	if ( $taxid == 0 ) {
 		$terms = get_terms( 'gallery_procedures' );
 		$taxid = wp_list_pluck( $terms, 'term_id' );
 	}
@@ -372,7 +372,7 @@ function get_gallery_info() {
 			),
 		),
 		'order'          => 'ASC',
-		'orderby'        => 'menu_title',
+		'orderby'        => 'menu_order',
 		'posts_per_page' => -1,
 	);
 
@@ -384,10 +384,7 @@ function get_gallery_info() {
 		get_template_part( 'components/gallery-preview' );
 	endwhile;
 
-	echo esc_html( ob_get_clean() );
+	echo ob_get_clean();
 
-	wp_die();
+	wp_die(); // this is required to terminate immediately and return a proper response
 }
-
-add_action( 'wp_ajax_get_gallery_info', 'get_gallery_info' );
-add_action( 'wp_ajax_nopriv_get_gallery_info', 'get_gallery_info' );

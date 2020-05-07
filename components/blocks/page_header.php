@@ -21,6 +21,11 @@ if ( $contact_form ) :
 	$phone_url    = get_field( 'business_phone_url', 'option' );
 	$hours        = get_field( 'business_hours', 'option' );
 endif;
+
+if ( is_post_type_archive( 'gallery' ) ) :
+	$image = get_field( 'gallery_header_image', 'option' );
+endif;
+
 ?>
 
 <?php if ( ! empty( $image ) ) : ?>
@@ -36,7 +41,11 @@ endif;
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-6">
-			<h1><?php echo get_the_title(); ?></h1>
+			<?php if ( is_post_type_archive( 'gallery' ) ) : ?>
+				<h1>Before & After Gallery</h1>
+			<?php else: ?>
+				<h1><?php echo get_the_title(); ?></h1>
+			<?php endif; ?>
 		</div>
 		<?php if ( $contact_form ) : ?>
 			<?php if ( is_page( 230 ) ) : ?>

@@ -59,7 +59,8 @@
             padding: 0;
 
             input,
-            textarea {
+            textarea,
+            select {
               font-size: 1.81rem !important;
               line-height: 1.2em;
               border-bottom: 1px solid #d3d9d4;
@@ -75,6 +76,29 @@
         text-align: left !important;
         .btn {
           margin-left: 0;
+        }
+      }
+    }
+
+    &.grid--contact-single {
+      grid-template-columns: 1fr;
+
+      label {
+        text-align: left !important;
+      }
+
+      .gform_wrapper {
+        ul.gform_fields {
+          li.gfield {
+            div.ginput_container {
+              width: 50%;
+            }
+          }
+        }
+      }
+      .gform_footer {
+        .btn {
+          margin-left: 50%;
         }
       }
     }

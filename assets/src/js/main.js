@@ -159,11 +159,11 @@
           loadmore();
           clickLoadmore();
           clickLightBox();
-          $('select[data-toggle="categories"]').on("change", function() {
-            var $tax_id = $(this)
-              .find(":selected")
-              .data("setProcedure");
-            console.log($tax_id);
+          toggleNextGalleryItem();
+
+          if ($("#archive-box").length > 0) {
+            var $tax_id = $("#archive-box").data("setProcedure");
+            $("#archive-box").remove();
             $("#grid__gallery").fadeOut("slow", function() {
               $.ajax({
                 url: im.ajax_url,
@@ -173,7 +173,6 @@
                   taxid: $tax_id
                 },
                 success: function(response) {
-                  console.log(response);
                   $("#grid__gallery")
                     .empty()
                     .append(response)
@@ -182,6 +181,32 @@
                     });
                   clickLoadmore();
                   clickLightBox();
+                  toggleNextGalleryItem();
+                }
+              });
+            });
+          }
+          $('.gallery--procedures li').on("click", function() {
+            var $tax_id = $(this).data("setProcedure");
+							console.log($tax_id);
+            $("#grid__gallery").fadeOut("slow", function() {
+              $.ajax({
+                url: im.ajax_url,
+                type: "get",
+                data: {
+                  action: "get_gallery_info",
+                  taxid: $tax_id
+                },
+                success: function(response) {
+                  $("#grid__gallery")
+                    .empty()
+                    .append(response)
+                    .fadeIn("slow", function() {
+                      loadmore();
+                    });
+                  clickLoadmore();
+                  clickLightBox();
+                  toggleNextGalleryItem();
                 }
               });
             });
@@ -211,10 +236,53 @@
 
           function clickLightBox() {
             $('[data-toggle="lightbox"').on("click", function() {
-              $(this).addClass("hi");
               $(this)
                 .closest(".gallery__item")
                 .find(".lightbox--patient")
+                .toggleClass("open-lightbox");
+
+              if (
+                $(this)
+                  .closest(".gallery__item")
+                  .next(".gallery__item").length <= 0
+              ) {
+                $(this)
+                  .closest(".gallery__item")
+                  .find(".swiper-button-next")
+                  .hide();
+              }
+              if (
+                $(this)
+                  .closest(".gallery__item")
+                  .prev(".gallery__item").length <= 0
+              ) {
+                $(this)
+                  .closest(".gallery__item")
+                  .find(".swiper-button-prev")
+                  .hide();
+              }
+            });
+          }
+
+          function toggleNextGalleryItem() {
+            $(".gallery__item .swiper-button-next").on("click", function() {
+              $(this)
+                .closest(".gallery__item")
+                .next(".gallery__item")
+                .find(".lightbox--patient")
+                .toggleClass("open-lightbox");
+              $(this)
+                .closest(".lightbox--patient")
+                .toggleClass("open-lightbox");
+            });
+            $(".gallery__item .swiper-button-prev").on("click", function() {
+              $(this)
+                .closest(".gallery__item")
+                .prev(".gallery__item")
+                .find(".lightbox--patient")
+                .toggleClass("open-lightbox");
+              $(this)
+                .closest(".lightbox--patient")
                 .toggleClass("open-lightbox");
             });
           }
