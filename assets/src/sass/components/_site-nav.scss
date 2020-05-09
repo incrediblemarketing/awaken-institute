@@ -6,14 +6,29 @@
   height: auto;
   display: flex;
   justify-content: space-between;
-  padding: 35px 60px;
+  padding: 10px 15px;
   z-index: 999;
   align-items: center;
   transition: all 0.4s ease-in-out;
+  @include mq(lg) {
+    padding: 15px 30px;
+  }
+  @include mq(xxl) {
+    padding: 35px 60px;
+  }
+
+  .awaken-logo {
+    height: 80px;
+    width: auto;
+
+    @include mq(md) {
+      height: 112px;
+    }
+  }
 
   button {
-    width: 75px;
-    height: 71px;
+    width: 55px;
+    height: 51px;
     background: $off-black;
     padding: 0;
     border: 0;
@@ -21,6 +36,11 @@
     align-items: center;
     justify-content: center;
     margin-left: 15px;
+
+    @include mq(md) {
+      width: 75px;
+      height: 71px;
+    }
 
     .span__holder {
       display: flex;
@@ -60,12 +80,41 @@
     letter-spacing: 0.15em;
 
     i {
+      display: flex;
+      height: 45px;
+      width: 45px;
+      background: $green;
+      color: $white;
+      border-radius: 100em;
+      align-items: center;
+      justify-content: center;
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+
+    span {
       display: none;
+
+      @include mq(md) {
+        display: inline-block;
+      }
     }
   }
 
   .btn-primary {
     margin-left: 45px;
+    padding: 0 15px;
+    display: none;
+
+    @include mq(lg) {
+      display: flex;
+    }
+
+    @include mq(xl) {
+      padding: 0 30px;
+    }
 
     i {
       @include mq(lg) {
@@ -94,6 +143,11 @@
 
     .awaken-logo {
       padding: 5px 0;
+      height: 70px;
+
+      @include mq(md) {
+        height: 112px;
+      }
     }
 
     .call {

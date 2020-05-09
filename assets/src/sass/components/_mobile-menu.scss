@@ -5,22 +5,26 @@
   height: 100%;
   left: -100%;
   opacity: 0;
-  padding: 60px 15px;
+  padding: 20px 15px;
   background-attachment: unset;
   background: url(/wp-content/uploads/2020/05/square-bg-1.jpg);
   @include mq(md) {
     padding: 60px 45px;
   }
   .awaken-logo {
-    width: 240px;
+    width: 160px;
     height: auto;
     margin: 0 auto 15px;
     display: flex;
+
+    @include mq(md) {
+      width: 240px;
+    }
   }
 
   button {
-    width: 75px;
-    height: 71px;
+    width: 55px;
+    height: 51px;
     background: $off-black;
     padding: 0;
     border: 0;
@@ -29,8 +33,15 @@
     justify-content: center;
     margin-left: 15px;
     position: absolute;
-    top: 45px;
-    right: 45px;
+    top: 15px;
+    right: 15px;
+
+    @include mq(md) {
+      top: 45px;
+      right: 45px;
+      height: 71px;
+      width: 75px;
+    }
 
     .span__holder {
       display: flex;
@@ -65,12 +76,12 @@
     padding: 0;
     margin: 45px 0;
     list-style: none;
-    max-height: 70%;
-    height: 70%;
+    max-height: 63%;
+    height: 63%;
     overflow: auto;
     text-align: center;
     @media screen and (max-height: 600px) {
-      max-height: 49%;
+      max-height: 45%;
     }
     @include mq($until: md) {
       margin-top: 15px;

@@ -26,6 +26,12 @@ if ( is_post_type_archive( 'gallery' ) ) :
 	$image = get_field( 'gallery_header_image', 'option' );
 endif;
 
+if ( is_page( array( 228, 230 ) ) ) :
+	$cols = 'col-xl-4 col-lg-6 col-11';
+else :
+	$cols = 'col-xl-6 col-md-8 col-11';
+endif;
+
 ?>
 
 <?php if ( ! empty( $image ) ) : ?>
@@ -40,49 +46,50 @@ endif;
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="<?php echo $cols; ?>">
 			<?php if ( is_post_type_archive( 'gallery' ) ) : ?>
 				<h1>Before & After Gallery</h1>
-			<?php else: ?>
+			<?php else : ?>
 				<h1><?php echo get_the_title(); ?></h1>
 			<?php endif; ?>
 		</div>
-		<?php if ( $contact_form ) : ?>
-			<?php if ( is_page( 230 ) ) : ?>
-				<div class="form--area">
-					<div class="grid--contact">
-						<div class="contact--info">
-							<?php if ( $hours ) : ?>
-								<div class="item">
-									<p><strong>Hours of Operation</strong></p>
-									<p><?php echo esc_attr( $hours ); ?></p>
-								</div>
-							<?php endif; ?>
-							<?php if ( $address ) : ?>
-								<div class="item">
-									<p><strong>Office Address</strong></p>
-									<p><?php echo esc_attr( $address ); ?><br/><?php echo esc_attr( $address2 ); ?></p>
-								</div>
-							<?php endif; ?>
-							<?php if ( $phone ) : ?>
-								<div class="item">
-									<p><strong>Phone Number</strong></p>
-									<p><?php echo esc_attr( $phone ); ?></p>
-								</div>
-							<?php endif; ?>
-						</div>
-						<div class="form--area">
-							<?php echo do_shortcode( '[gravityforms id="2" title="false" ajax="true" description="false"]' ); ?>
-						</div>
-					</div>
-				</div>
-			<?php elseif ( is_page( 228 ) ) : ?>
-				<div class="grid--contact grid--contact-single">
-						<div class="form--area">
-							<?php echo do_shortcode( '[gravityforms id="1" title="false" ajax="true" description="false"]' ); ?>
-						</div>
-				</div>
-			<?php endif; ?>
-		<?php endif; ?>
 	</div>
 </div>
+<?php if ( $contact_form ) : ?>
+</div>
+	<?php if ( is_page( 230 ) ) : ?>
+		<div class="form--area">
+			<div class="grid--contact">
+				<div class="contact--info">
+					<?php if ( $hours ) : ?>
+						<div class="item">
+							<p><strong>Hours of Operation</strong></p>
+							<p><?php echo esc_attr( $hours ); ?></p>
+						</div>
+					<?php endif; ?>
+					<?php if ( $address ) : ?>
+						<div class="item">
+							<p><strong>Office Address</strong></p>
+							<p><?php echo esc_attr( $address ); ?><br/><?php echo esc_attr( $address2 ); ?></p>
+						</div>
+					<?php endif; ?>
+					<?php if ( $phone ) : ?>
+						<div class="item">
+							<p><strong>Phone Number</strong></p>
+							<p><?php echo esc_attr( $phone ); ?></p>
+						</div>
+					<?php endif; ?>
+				</div>
+				<div class="form--area">
+					<?php echo do_shortcode( '[gravityforms id="2" title="false" ajax="true" description="false"]' ); ?>
+				</div>
+			</div>
+		</div>
+	<?php elseif ( is_page( 228 ) ) : ?>
+		<div class="grid--contact grid--contact-single">
+				<div class="form--area">
+					<?php echo do_shortcode( '[gravityforms id="1" title="false" ajax="true" description="false"]' ); ?>
+				</div>
+		</div>
+	<?php endif; ?>
+<?php endif; ?>

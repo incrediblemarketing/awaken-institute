@@ -1,9 +1,22 @@
 .block--dark_gray_geo_area {
-  padding: 251px 0 257px;
   background: url(/wp-content/uploads/2020/05/gray-subtle-bg.jpg) no-repeat
     center / cover;
   color: $white;
+  padding: 90px 0;
 
+  @include mq(lg) {
+    padding: 12vh 0;
+  }
+  @include mq(xl) {
+    padding: 23vh 0;
+  }
+  .content--area {
+    margin-bottom: 35px;
+
+    @include mq(lg) {
+      margin-bottom: 0;
+    }
+  }
   h2,
   h5 {
     color: $white !important;
@@ -15,7 +28,14 @@
 
   .box--area {
     background: $white;
-    padding: 50px;
+    padding: 25px;
+
+    @include mq(lg) {
+      padding: 35px;
+    }
+    @include mq(xxl) {
+      padding: 50px;
+    }
 
     h3 {
       font-weight: 600;
@@ -58,13 +78,19 @@
 
   .flex--boxes {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 40px;
+
+    @include mq(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .flex-row-reverse {
     .content--area {
-      padding-left: 65px;
+      @include mq(lg) {
+        padding-left: 65px;
+      }
 
       p {
         padding: 0;

@@ -1,1 +1,27 @@
-.block {position:relative;}
+.block {
+  position: relative;
+}
+
+.block__team-member {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+  margin-bottom: 90px;
+
+  @include mq(md) {
+    grid-template-columns: 30vw 1fr;
+  }
+
+  @include mq(xl) {
+    margin-bottom: 150px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+
+    @include mq(md) {
+      width: 30vw;
+    }
+  }
+}

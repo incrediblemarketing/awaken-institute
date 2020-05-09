@@ -7,6 +7,10 @@
     no-repeat;
   align-items: flex-end;
   display: flex;
+
+  @include mq(xl) {
+    align-items: flex-end;
+  }
   .image--holder {
     @include absolute_cover;
     img {
@@ -16,11 +20,33 @@
       object-fit: cover;
       min-height: 100%;
       min-width: 100%;
+      width: 100%;
+      height: auto;
+      object-position: 80%;
+
+      @include mq(md) {
+        object-position: right;
+      }
+      @include mq(xl) {
+        object-position: center;
+      }
     }
   }
 
   h1 {
     margin-bottom: 30px;
+    height: 4.5rem;
+
+    strong {
+      position: absolute;
+      opacity: 0;
+      left: 15px;
+      transition: all 0.2s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+    }
   }
 
   p {
@@ -49,11 +75,15 @@
   }
 
   a.js-scroll-to {
-    display: inline-block;
+    display: none;
     margin-top: 50px;
 
+    @include mq(md) {
+      display: inline-block;
+    }
+
     .more {
-      height: 142px;
+      height: 13.3vh;
       display: flex;
       align-items: flex-end;
       width: 69px;
@@ -77,8 +107,16 @@
   }
   .hero-content {
     z-index: 1;
-    padding-bottom: 16vh;
     padding-right: 3vw;
+    padding-bottom: 8vh;
+
+    @include mq(xl) {
+      padding-bottom: 10vh;
+    }
+
+    @include mq(xxl) {
+      padding-bottom: 16vh;
+    }
   }
   .hero-image {
     z-index: 0;
@@ -150,10 +188,19 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 60px;
-    display: flex;
+    left: 15px;
+    display: none !important;
     flex-direction: column;
     font-size: 14px;
+    z-index: 8;
+
+    @include mq(lg) {
+      display: flex !important;
+    }
+
+    @include mq(xl) {
+      left: 60px;
+    }
 
     li {
       margin-bottom: 10px;

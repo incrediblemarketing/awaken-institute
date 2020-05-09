@@ -10,18 +10,28 @@
     left: 0;
     height: 100%;
     width: 760px;
-    max-width: 40vw;
+    max-width: 48vw;
     overflow: hidden;
     background: $beige;
     z-index: 0;
+
+    @include mq(lg) {
+      max-width: 40vw;
+    }
 
     img {
       position: absolute;
       top: 0;
       left: 0;
       object-fit: cover;
-      opacity: 0.25;
+      opacity: 0.1;
       z-index: 1;
+      min-height: 100%;
+      width: auto;
+
+      @include mq(lg) {
+        opacity: 0.25;
+      }
     }
 
     &::before {
@@ -36,7 +46,11 @@
     }
   }
   .padding--section {
-    padding: 194px 0 138px;
+    padding: 90px 0;
+
+    @include mq(md) {
+      padding: 194px 0 138px;
+    }
   }
 
   h5 {
@@ -50,11 +64,17 @@
     border-radius: 0 0 0 60px;
     position: relative;
     z-index: 0;
+    margin-bottom: 35px;
+
+    @include mq(lg) {
+      margin: 0;
+    }
 
     img {
       max-width: 102%;
       height: auto;
       border-radius: 0 0 0 60px;
+      min-width: 100%;
     }
 
     &::before {
@@ -79,11 +99,15 @@
 
     h5 {
       position: absolute;
-      left: -178px;
+      left: -130px;
       transform: rotate(-90deg) translate(-50%, -50%);
       display: flex;
       align-items: center;
       margin: 0;
+
+      @include mq(xl) {
+        left: -178px;
+      }
 
       &::before {
         content: "";

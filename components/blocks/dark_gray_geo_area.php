@@ -23,10 +23,10 @@ if ( ! $toggle_large_content ) :
 
 <div class="container-fluid">
   <div class="row justify-content-center <?php echo $reverse; ?>">
-		<div class="col-xl-4 content--area">
+		<div class="col-xxl-4 col-lg-5 content--area">
 			<?php echo $large_content; ?>
 		</div>
-		<div class="col-xl-6 flex--boxes">
+		<div class="col-xxl-6 col-lg-7 flex--boxes">
 			<?php if ( $full_service_content ) : ?>
 				<div class="box--area">
 					<?php echo $full_service_content; ?>

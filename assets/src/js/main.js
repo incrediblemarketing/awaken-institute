@@ -25,8 +25,22 @@
           this.mobileMenu();
           this.siteNavSticky();
           this.galleryBuilder();
-          this.swiperSetup();
-        },
+					this.swiperSetup();
+					this.headingRotator();
+				},
+				headingRotator: function() {
+					setInterval(function(){
+						var active = $('.rotating-header strong.active');
+						if(active.is(':last-child'))
+						{
+								active.removeClass('active');
+								active = $('.rotating-header strong').first().addClass('active');
+						}else{
+								active.next('strong').addClass('active');
+								active.removeClass('active');
+						}
+					}, 4000);
+				},
         siteNavSticky: function() {
           $cache.window.scroll(function() {
             if ($cache.window.scrollTop() > 0) {
@@ -289,14 +303,24 @@
         },
         swiperSetup: function() {
           var services_slider = new Swiper(".slider--services", {
-            slidesPerView: 3,
             loop: true,
             centeredSlides: true,
-            spaceBetween: 30,
+						slidesPerView: 3,
+						spaceBetween: 40,
             navigation: {
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"
-            }
+						},
+						breakpoints: {
+							640: {
+								slidesPerView: 1,
+								spaceBetween: 20,
+							},
+							768: {
+								slidesPerView: 3,
+								spaceBetween: 40,
+							},
+						}
           });
         }
       }

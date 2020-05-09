@@ -24,14 +24,14 @@
 
 <div class="container-fluid">
 	<div class="row padding--section justify-content-center">
-		<div class="col-xl-4">
+		<div class="col-xxl-4 col-xl-5 col-lg-6">
 			<div class="image__holder">
 				<?php if ( ! empty( $front_image ) ) : ?>
 					<img src="<?php echo esc_url( $front_image['url'] ); ?>" alt="<?php echo esc_attr( $front_image['alt'] ); ?>" class="image--front" />
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class="col-xl-5 offset-xl-1 content--area">
+		<div class="col-xxl-5 offset-xxl-1 col-lg-6 offset-xl-1 content--area">
 			<?php echo $content; ?>
 		</div>
 	</div>

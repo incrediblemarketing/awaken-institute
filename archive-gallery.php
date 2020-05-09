@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div class="container-fluid page__gallery">
   <div class="row">
-		<div class="col-lg-2 offset-lg-1">
+		<div class="col-xxl-2 offset-xxl-1 col-lg-3">
 			<div class="widget">
 				<h3>Filter Gallery</h3>
 				<ul class="gallery--procedures">

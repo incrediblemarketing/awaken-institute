@@ -11,14 +11,37 @@
     @include absolute_cover;
     overflow: hidden;
 
+    @include mq($until: md) {
+      background: $off-black;
+    }
+
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
+
+      @include mq($until: md) {
+        width: auto;
+        height: 100%;
+        opacity: 0.3;
+      }
     }
   }
+
   .padding--section {
-    padding: 175px 0 381px;
+    padding: 180px 0 65px;
+
+    @include mq(md) {
+      padding: 5vh 0 15vh;
+    }
+
+    @include mq(xl) {
+      padding: 13vh 0 50vh;
+    }
+
+    @include mq(xxl) {
+      padding: 16vh 0 37vh;
+    }
   }
   .btn {
     margin: 0 auto;
@@ -53,8 +76,15 @@
 }
 .block--gallery-quote {
   .image--holder {
-    transform: translateY(-253px);
-    margin-bottom: -253px;
+    @include mq(lg) {
+      transform: translateY(-5vh);
+      margin-bottom: -9vh;
+    }
+
+    @include mq(xl) {
+      transform: translateY(-23vh);
+      margin-bottom: -23vh;
+    }
 
     img {
       width: 100%;
@@ -62,9 +92,16 @@
     }
   }
   .block--quote {
-    padding-top: 114px;
+    padding-top: 3vh;
     padding-left: 110px;
     position: relative;
+    @include mq($until: lg) {
+      margin: 60px 0 90px;
+    }
+
+    @include mq(xxl) {
+      padding-top: 10vh;
+    }
 
     .quote {
       position: absolute;
@@ -95,10 +132,14 @@
   width: 100%;
   height: 100vh;
   background: url(/wp-content/uploads/2020/05/square-bg-1.jpg);
-  padding: 45px;
+  padding: 15px;
   transform: scale(0);
   transition: all 0.4s ease-in-out;
   z-index: -1;
+
+  @include mq(sm) {
+    padding: 45px;
+  }
 
   &.open-lightbox {
     transform: scale(1);
@@ -109,11 +150,15 @@
 
   .lightbox--container {
     width: 100%;
+
+    > .col-12 {
+      padding: 0;
+    }
   }
 
   button {
-    width: 75px;
-    height: 71px;
+    width: 55px;
+    height: 51px;
     background: $off-black;
     padding: 0;
     border: 0;
@@ -122,9 +167,18 @@
     justify-content: center;
     margin-left: 15px;
     position: absolute;
-    top: 45px;
-    right: 45px;
+    top: 15px;
+    right: 15px;
+    z-index: 8;
 
+    @include mq(md) {
+      width: 75px;
+      height: 71px;
+    }
+    @include mq(xxl) {
+      top: 45px;
+      right: 45px;
+    }
     .span__holder {
       display: flex;
       flex-direction: column;
@@ -157,19 +211,49 @@
 }
 
 .page__gallery {
-  margin: 160px 0;
+  margin: 90px 0;
+
+  @include mq(lg) {
+    margin: 120px 0;
+  }
+  @include mq(xl) {
+    margin: 160px 0;
+  }
 
   .content--area {
-    padding-left: 25px;
+    padding-left: 15px;
+
+    @include mq(lg) {
+      padding-left: 25px;
+    }
 
     .gallery__item {
       display: grid;
-      grid-template-columns: 547px 1fr;
+      grid-template-columns: 1fr;
       grid-gap: 40px;
       margin-bottom: 90px;
 
+      @include mq(md) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include mq(xxl) {
+        grid-template-columns: 547px 1fr;
+      }
+
       .image__holder {
         cursor: pointer;
+
+        img {
+          width: 100%;
+          height: auto;
+
+          @include mq(md) {
+            width: 43.5vw;
+          }
+          @include mq(lg) {
+            width: 28.5vw;
+          }
+        }
       }
     }
   }
@@ -177,6 +261,7 @@
   .widget {
     background: #eff4f0;
     padding: 30px 35px;
+    margin-bottom: 35px;
 
     ul {
       padding: 0;
@@ -216,14 +301,48 @@
       justify-content: center;
 
       .image__holder {
-        margin: 0 20px;
+        margin: 0 2.5px;
+        cursor: auto;
+
+        @include mq(xl) {
+          margin: 0 20px;
+        }
       }
     }
     .card__bottom {
       text-align: center;
-      width: 900px;
       max-width: 100%;
-      margin: 90px auto 0;
+      width: 100%;
+      margin: 35px auto 0;
+
+      @include mq(xxl) {
+        width: 900px;
+        margin: 90px auto 0;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 10px;
+
+        @include mq(lg) {
+          font-size: 1rem;
+          line-height: 1.63em;
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+  .lightbox--patient {
+    .ba__images {
+      .image__holder {
+        max-width: 32%;
+
+        img {
+          width: 100% !important;
+          height: auto;
+        }
+      }
     }
   }
 }

@@ -1,6 +1,10 @@
 html {
   background: #e5e5e5;
-  font-size: 22px;
+  font-size: 16px;
+
+  @include mq(xl) {
+    font-size: 22px;
+  }
 }
 
 body {
@@ -69,23 +73,42 @@ h5 {
 h1 {
   font-size: 4.54rem;
   line-height: 1.1em;
+
+  body:not(.home) & {
+    font-size: 3.5rem;
+
+    @include mq(xxl) {
+      font-size: 4.54rem;
+    }
+  }
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1.16em;
   letter-spacing: 0.16em;
   font-weight: 300;
   font-style: normal;
   text-transform: uppercase;
 
+  @include mq(xl) {
+    font-size: 2.3rem;
+  }
+  @include mq(xxl) {
+    font-size: 2.5rem;
+  }
+
   body:not(.home) & {
     font-weight: 300;
-    font-size: 2.18rem;
+    font-size: 1.5rem;
     line-height: 1.25em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 25px;
+
+    @include mq(xxl) {
+      font-size: 2.18rem;
+    }
   }
 }
 
@@ -111,6 +134,19 @@ h5 {
 }
 
 .container-fluid {
-  padding-left: 100px;
-  padding-right: 100px;
+  @include mq(lg) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.padding--section {
+  padding: 90px 15px;
+
+  @include mq(lg) {
+    padding: 12vh 15px;
+  }
+  @include mq(xl) {
+    padding: 23vh 15px;
+  }
 }

@@ -1,8 +1,12 @@
 .block--services {
-  padding: 160px 0;
+  padding: 90px 0;
   background: url(/wp-content/uploads/2020/03/pattern-top-left.jpg) top left /
     cover no-repeat;
   text-align: center;
+
+  @include mq(lg) {
+    padding: 160px 0;
+  }
 
   h5 {
     margin-bottom: 24px;
