@@ -33,6 +33,7 @@
 						<?php echo get_the_post_thumbnail( $post->ID, 'featured_thumb' ); ?>
 					</div>
 					<h6><?php echo esc_attr( the_title() ); ?></h6>
+					<h5><?php echo get_field( 'procedure_slider_text' ); ?></h5>
 					</a>
 				</div>
 			<?php endforeach; ?>

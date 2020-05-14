@@ -27,7 +27,6 @@
 				<div class="video__text">
 					<div class="item">AWAKEN</div>
 					<div class="item"><a href="http://www.youtube.com/watch?v=<?php echo esc_attr( $youtube_id ); ?>" class="popup-youtube btn-circle"><i class="fal fa-play"></i></a></div>
-					<div class="item">INSTITUTE</div>
 				</div>
 		</div>
 	</div>

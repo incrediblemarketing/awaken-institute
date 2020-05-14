@@ -59,12 +59,12 @@ endif;
 </div>
 	<?php if ( is_page( 230 ) ) : ?>
 		<div class="form--area">
-			<div class="grid--contact">
+			<div class="grid--contact--page">
 				<div class="contact--info">
 					<?php if ( $hours ) : ?>
 						<div class="item">
 							<p><strong>Hours of Operation</strong></p>
-							<p><?php echo esc_attr( $hours ); ?></p>
+							<p><?php echo $hours; ?></p>
 						</div>
 					<?php endif; ?>
 					<?php if ( $address ) : ?>
@@ -86,7 +86,7 @@ endif;
 			</div>
 		</div>
 	<?php elseif ( is_page( 228 ) ) : ?>
-		<div class="grid--contact grid--contact-single">
+		<div class="grid--contact--page grid--contact-single">
 				<div class="form--area">
 					<?php echo do_shortcode( '[gravityforms id="1" title="false" ajax="true" description="false"]' ); ?>
 				</div>

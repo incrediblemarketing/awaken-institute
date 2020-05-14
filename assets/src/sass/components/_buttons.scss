@@ -45,3 +45,16 @@
     opacity: 0.7;
   }
 }
+
+.button--mobile {
+  margin-top: 35px;
+
+  .btn {
+    width: 100%;
+  }
+
+  @include mq(md) {
+    display: none !important;
+    margin: unset;
+  }
+}

@@ -25,12 +25,6 @@
 		<div class="col-xl-5 offset-xl-1 hero-content">
 			<?php echo $content; ?>
 			<a href="/contact/" class="btn btn-primary">Schedule Consultation</a>
-			<a href="#block-5e603523d1836" class="js-scroll-to">
-				<div class="more">
-					<div class="line"></div>
-					<p>Explore More</p>
-				</div>
-			</a>
 		</div>
 	</div>
 	<?php get_template_part( 'components/social-icons' ); ?>

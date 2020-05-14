@@ -302,8 +302,7 @@
           }
         },
         swiperSetup: function() {
-          var services_slider = new Swiper(".slider--services", {
-            loop: true,
+          var services_slider = new Swiper(".slider--services", {x
             centeredSlides: true,
 						slidesPerView: 3,
 						spaceBetween: 40,

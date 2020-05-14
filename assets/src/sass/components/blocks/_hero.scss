@@ -5,14 +5,13 @@
   overflow: hidden;
   background: url(/wp-content/uploads/2020/03/pattern-bg.jpg) center / cover
     no-repeat;
-  align-items: flex-end;
+  align-items: center;
   display: flex;
 
-  @include mq(xl) {
-    align-items: flex-end;
-  }
   .image--holder {
+    background: $white;
     @include absolute_cover;
+
     img {
       position: absolute;
       top: 0;
@@ -23,6 +22,11 @@
       width: 100%;
       height: auto;
       object-position: 80%;
+
+      @include mq($until: md) {
+        mix-blend-mode: multiply;
+        opacity: 0.65;
+      }
 
       @include mq(md) {
         object-position: right;
@@ -55,13 +59,14 @@
     font-family: $agenda_condensed;
     color: $off-black;
     margin-bottom: 59px;
+    z-index: 0;
 
     strong {
-      font-size: 1.2em;
+      font-size: 1.1em;
       line-height: 1.19em;
       font-weight: 600;
       position: relative;
-      z-index: 0;
+      z-index: -1;
 
       &:before {
         content: url(/wp-content/themes/awaken/assets/src/img/brush-stroke.svg);
@@ -69,54 +74,14 @@
         bottom: -27px;
         right: 0;
         height: 57px;
-        z-index: -1;
+        z-index: -2;
       }
     }
   }
 
-  a.js-scroll-to {
-    display: none;
-    margin-top: 50px;
-
-    @include mq(md) {
-      display: inline-block;
-    }
-
-    .more {
-      height: 13.3vh;
-      display: flex;
-      align-items: flex-end;
-      width: 69px;
-      p {
-        font-size: 18px;
-        line-height: 1.2em;
-        color: $black;
-        margin-top: auto;
-        margin-bottom: 0;
-      }
-
-      .line {
-        margin: 0 25px 0 0;
-        animation: scrollDown 4s infinite ease-out;
-        transform-origin: center top;
-        width: 1px;
-        height: 100%;
-        border-left: 1px solid $gray;
-      }
-    }
-  }
   .hero-content {
     z-index: 1;
     padding-right: 3vw;
-    padding-bottom: 8vh;
-
-    @include mq(xl) {
-      padding-bottom: 10vh;
-    }
-
-    @include mq(xxl) {
-      padding-bottom: 16vh;
-    }
   }
   .hero-image {
     z-index: 0;

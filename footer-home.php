@@ -44,7 +44,7 @@
 							<div class="item">
 								<i class="fal fa-clock"></i>
 								<p><strong>Hours of Operation</strong></p>
-								<p><?php echo esc_attr( $hours ); ?></p>
+								<p><?php echo $hours; ?></p>
 							</div>
 						<?php endif; ?>
 						<?php if ( $address ) : ?>

@@ -3,14 +3,9 @@
 }
 
 .block__team-member {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 40px;
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 90px;
-
-  @include mq(md) {
-    grid-template-columns: 30vw 1fr;
-  }
 
   @include mq(xl) {
     margin-bottom: 150px;
@@ -19,9 +14,19 @@
   img {
     width: 100%;
     height: auto;
+    margin-right: 40px;
 
     @include mq(md) {
       width: 30vw;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    img {
+      margin-right: 0;
+      margin-left: 40px;
     }
   }
 }

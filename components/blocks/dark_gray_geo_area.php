@@ -38,5 +38,8 @@ if ( ! $toggle_large_content ) :
 				</div>
 			<?php endif; ?>
 		</div>
+		<div class="col-12 button--mobile">
+			<a href="/request-an-appointment/" class="btn btn-primary">Schedule Consultation</a>
+		</div>
   </div>
 </div>

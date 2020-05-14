@@ -39,6 +39,11 @@
 
     @include mq(md) {
       width: 75px;
+      height: 54px;
+    }
+
+    @include mq(xxl) {
+      width: 75px;
       height: 71px;
     }
 
@@ -78,33 +83,10 @@
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.15em;
-
-    i {
-      display: flex;
-      height: 45px;
-      width: 45px;
-      background: $green;
-      color: $white;
-      border-radius: 100em;
-      align-items: center;
-      justify-content: center;
-
-      @include mq(md) {
-        display: none;
-      }
-    }
-
-    span {
-      display: none;
-
-      @include mq(md) {
-        display: inline-block;
-      }
-    }
   }
 
   .btn-primary {
-    margin-left: 45px;
+    margin-left: 15px;
     padding: 0 15px;
     display: none;
 
@@ -114,11 +96,42 @@
 
     @include mq(xl) {
       padding: 0 30px;
+      height: 54px;
+    }
+
+    @include mq(xxl) {
+      height: 71px;
     }
 
     i {
       @include mq(lg) {
         display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-left: auto;
+      i {
+        display: flex;
+        height: 45px;
+        width: 45px;
+        background: $green;
+        color: $white;
+        border-radius: 100em;
+        align-items: center;
+        justify-content: center;
+
+        @include mq(md) {
+          display: none;
+        }
+      }
+
+      span {
+        display: none;
+
+        @include mq(md) {
+          display: inline-block;
+        }
       }
     }
   }
