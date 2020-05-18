@@ -30,7 +30,7 @@ get_header(); ?>
 				<div id="grid__gallery" class="grid__gallery">
 					<?php while ( have_posts() ) : ?>
 						<?php the_post(); ?>
-						<div id="archive-box" data-set-procedure="5"></div>
+						<div id="archive-box" data-set-procedure="3"></div>
 					<?php endwhile; ?> 
 				</div>
 				<button data-toggle="load-more" class="btn btn-primary">Load More</button>

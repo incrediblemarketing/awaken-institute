@@ -11,7 +11,7 @@ $gallerycount++;
 		?>
 		<div class="ba__images" data-toggle="lightbox">
 			<?php foreach ( $gallery_images as $image ) : ?>
-					<?php if ( $count < 1 ) : ?>
+					<?php if ( $count < 2 ) : ?>
 					<div class="image__holder">
 						<img src="<?php echo esc_url( $image['sizes']['gallery_thumb'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 					</div>

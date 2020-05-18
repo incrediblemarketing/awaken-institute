@@ -246,13 +246,6 @@
         img {
           width: 100%;
           height: auto;
-
-          @include mq(md) {
-            width: 43.5vw;
-          }
-          @include mq(lg) {
-            width: 28.5vw;
-          }
         }
       }
     }
@@ -339,10 +332,26 @@
         max-width: 32%;
 
         img {
-          width: 100% !important;
+          max-width: 100% !important;
           height: auto;
+          width: auto;
+          max-height: 35vh;
         }
       }
+    }
+  }
+}
+.gallery__procedures ul {
+  list-style-position: inside;
+}
+.grid__gallery {
+  .ba__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }
