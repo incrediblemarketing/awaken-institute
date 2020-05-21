@@ -146,6 +146,7 @@
     z-index: 9999;
     display: flex;
     align-items: center;
+    overflow: auto;
   }
 
   .lightbox--container {
@@ -289,9 +290,13 @@
   .lightbox--container {
     .block__content {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       grid-gap: 5vw;
       align-items: center;
+
+      @include mq(md) {
+        grid-template-columns: 1fr 1fr;
+      }
 
       .ba__images {
         display: grid;
