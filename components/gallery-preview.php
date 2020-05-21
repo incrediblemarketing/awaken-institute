@@ -49,8 +49,9 @@ $gallerycount++;
 							<div class="ba__images">
 						<?php endif; ?>
 								<?php foreach ( $gallery_images as $image ) : ?>
-										<div class="image__holder">
-											<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+										<div class="img-zoom-container image__holder">
+											
+											<?php echo do_shortcode( '[zooom normal_url="' . esc_url( $image['sizes']['medium'] ) . '" big_url="' . esc_url( $image['sizes']['large'] ) . '" ]' ); ?>
 										</div>
 										<?php $count++; ?>
 								<?php endforeach; ?>

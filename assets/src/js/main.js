@@ -195,7 +195,8 @@
                     });
                   clickLoadmore();
                   clickLightBox();
-                  toggleNextGalleryItem();
+									toggleNextGalleryItem();
+									magnify();
                 }
               });
             });
@@ -220,12 +221,11 @@
                     });
                   clickLoadmore();
                   clickLightBox();
-                  toggleNextGalleryItem();
+									toggleNextGalleryItem();
                 }
               });
             });
           });
-
           function loadmore() {
             $('button[data-toggle="load-more"]').fadeIn();
             $(".gallery__item")

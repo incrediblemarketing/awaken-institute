@@ -286,6 +286,29 @@
     display: flex;
   }
 
+  .lightbox--container {
+    .block__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 5vw;
+      align-items: center;
+
+      .ba__images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+        .image__holder {
+          max-width: 100%;
+          img {
+            max-height: 40vh;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+
   .block__content {
     width: 100%;
 
@@ -303,7 +326,6 @@
       }
     }
     .card__bottom {
-      text-align: center;
       max-width: 100%;
       width: 100%;
       margin: 35px auto 0;
@@ -329,7 +351,7 @@
   .lightbox--patient {
     .ba__images {
       .image__holder {
-        max-width: 32%;
+        max-width: 250px;
 
         img {
           max-width: 100% !important;
@@ -354,4 +376,11 @@
       height: auto;
     }
   }
+}
+.magnify > .magnify-lens {
+  height: 100px !important;
+  width: 100px !important;
+  box-shadow: none !important;
+  border: 1px solid $white;
+  border-radius: 100em;
 }
