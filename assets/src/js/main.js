@@ -27,6 +27,21 @@
           this.galleryBuilder();
 					this.swiperSetup();
 					this.headingRotator();
+					this.popup();
+				},
+				popup: function(){
+					setTimeout(function() {
+						if ($('#popup').length) {
+							$.magnificPopup.open({
+							 items: {
+									 src: '#popup' 
+							 },
+							 type: 'inline'
+								 });
+							}
+						}, 1000);
+
+						$('#menu-item-1273 a').attr("target","_blank");
 				},
 				headingRotator: function() {
 					setInterval(function(){

@@ -14,6 +14,7 @@
  */
 
 	$copyright = get_field( 'copyright', 'option' );
+	$popup     = get_field( 'popup_info', 'option' );
 ?>
 
 <footer class="footer block--footer-small">
@@ -38,7 +39,11 @@
 </footer>
 
 </div><!-- end of .site-wrap -->
-
+<?php if ( $popup ) : ?>
+	<div id="popup" class="mfp-hide">
+		<?php echo $popup; ?>
+	</div>
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 

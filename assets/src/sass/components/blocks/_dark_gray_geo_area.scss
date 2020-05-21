@@ -80,6 +80,13 @@
           top: 1px;
           font-weight: 400;
         }
+        ul {
+          li {
+            &::before {
+              content: "\f111";
+            }
+          }
+        }
       }
     }
   }

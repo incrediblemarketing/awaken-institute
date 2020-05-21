@@ -30,3 +30,21 @@
     }
   }
 }
+
+#popup {
+  width: 50vw;
+  background: $white;
+  border: 10px solid $primary;
+  margin: 0 auto;
+  padding: 45px;
+  position: relative;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.mfp-bg {
+  background: $white;
+  opacity: 0.85;
+}

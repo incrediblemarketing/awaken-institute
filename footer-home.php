@@ -21,6 +21,7 @@
 	$phone_url    = get_field( 'business_phone_url', 'option' );
 	$hours        = get_field( 'business_hours', 'option' );
 	$map_image    = get_field( 'map_image', 'option' );
+	$popup        = get_field( 'popup_info', 'option' );
 ?>
 
 <footer class="footer block--footer">
@@ -73,7 +74,11 @@
 </footer>
 
 </div><!-- end of .site-wrap -->
-
+<?php if ( $popup ) : ?>
+	<div id="popup" class="mfp-hide">
+		<?php echo $popup; ?>
+	</div>
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 
