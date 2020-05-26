@@ -39,11 +39,7 @@
 </footer>
 
 </div><!-- end of .site-wrap -->
-<?php if ( $popup ) : ?>
-	<div id="popup" class="mfp-hide">
-		<?php echo $popup; ?>
-	</div>
-<?php endif; ?>
+
 <?php wp_footer(); ?>
 </body>
 
