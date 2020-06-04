@@ -39,9 +39,11 @@
 			<?php endforeach; ?>
 			</div>
 			<?php get_template_part( 'components/swiper-nav' ); ?>
-			</div>
-			<?php wp_reset_postdata(); ?>
-		<?php endif; ?>
 		</div>
+		<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
 	</div>
 </div>
+</div>
+<div class="scroll--left"></div>
+<div class="scroll--right"></div>

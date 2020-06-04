@@ -18,6 +18,7 @@ $gallerycount++;
 					<?php endif; ?>
 					<?php $count++; ?>
 			<?php endforeach; ?>
+			<button data-id="open-lightbox" class="btn btn-primary">Click to View Case</button>
 		</div>
 	<?php endif; ?>
 	<div class="card__bottom">
@@ -35,23 +36,28 @@ $gallerycount++;
 				<span></span>
 			</div>
 		</button>
-			<div class="lightbox--container">
-				<div class="col-12">
-					<div class="block__content">
-						<?php
+					<?php
 						get_template_part( 'components/svg/exit-ico' );
 						$count = count( $gallery_images );
-						if ( $gallery_images ) :
-							?>
+					?>
+					<?php if ( $count < 4 ) : ?>
+						<div class="lightbox--container align-center">
+					<?php else : ?>
+						<div class="lightbox--container">
+					<?php endif; ?>
+
+				<div class="col-12">
+						<div class="block__content ">
+					<?php if ( $gallery_images ) : ?>
 							<?php if ( $count > 2 ) : ?>
 							<div class="ba__images small-images">
 						<?php else : ?>
 							<div class="ba__images">
 						<?php endif; ?>
 								<?php foreach ( $gallery_images as $image ) : ?>
-										<div class="img-zoom-container image__holder">
-											
+										<div class="img-zoom-container image__holder">											
 											<?php echo do_shortcode( '[zooom normal_url="' . esc_url( $image['sizes']['medium'] ) . '" big_url="' . esc_url( $image['sizes']['large'] ) . '" ]' ); ?>
+											<i class="fas fa-search-plus"></i>
 										</div>
 										<?php $count++; ?>
 								<?php endforeach; ?>

@@ -3,9 +3,29 @@
   background: url(/wp-content/uploads/2020/03/pattern-top-left.jpg) top left /
     cover no-repeat;
   text-align: center;
+  position: relative;
 
   @include mq(lg) {
     padding: 160px 0;
+  }
+
+  .scroll--left,
+  .scroll--right {
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+
+    @include mq(xl) {
+      width: 150px;
+    }
+  }
+
+  .scroll--right {
+    left: auto;
+    right: 0;
   }
 
   .padding--section {
@@ -21,6 +41,12 @@
   }
   .slider--services {
     overflow: visible;
+    position: relative;
+
+    .scroll--right {
+      left: auto;
+      right: 0;
+    }
 
     .swiper-slide {
       overflow: hidden;

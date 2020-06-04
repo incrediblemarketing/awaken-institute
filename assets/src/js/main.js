@@ -317,8 +317,7 @@
           }
         },
         swiperSetup: function() {
-          var services_slider = new Swiper(".slider--services", {x
-            centeredSlides: true,
+          var services_slider = new Swiper(".slider--services", {
 						slidesPerView: 3,
 						spaceBetween: 40,
             navigation: {
@@ -335,7 +334,14 @@
 								spaceBetween: 40,
 							},
 						}
-          });
+					});
+					
+					$('.block--services .scroll--left').on('hover', function() {
+						services_slider.slidePrev(2000, true);
+					})
+					$('.block--services .scroll--right').on('hover', function() {
+						services_slider.slideNext(2000, true);
+					})
         }
       }
     };

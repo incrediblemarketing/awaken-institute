@@ -147,10 +147,17 @@
     display: flex;
     align-items: center;
     overflow: auto;
+    height: 100vh;
   }
 
   .lightbox--container {
     width: 100%;
+    height: 100%;
+
+    &.align-center {
+      display: flex;
+      align-items: center;
+    }
 
     > .col-12 {
       padding: 0;
@@ -242,7 +249,17 @@
       }
 
       .image__holder {
+        position: relative;
         cursor: pointer;
+
+        .fa-search-plus {
+          position: absolute;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: $white;
+          z-index: 5;
+        }
 
         img {
           width: 100%;
@@ -292,7 +309,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: 5vw;
-      align-items: center;
+      align-items: flex-start;
 
       @include mq(md) {
         grid-template-columns: 1fr 1fr;
@@ -302,8 +319,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 15px;
+
         .image__holder {
           max-width: 100%;
+          text-align: center;
+
           img {
             max-height: 40vh;
             display: block;
@@ -334,6 +354,8 @@
       max-width: 100%;
       width: 100%;
       margin: 35px auto 0;
+      position: sticky;
+      top: 100px;
 
       @include mq(xxl) {
         width: 900px;
@@ -376,6 +398,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
+    .btn {
+      margin: 25px auto 0;
+      grid-column: span 2;
+    }
+
     img {
       width: 100%;
       height: auto;
@@ -383,8 +410,8 @@
   }
 }
 .magnify > .magnify-lens {
-  height: 100px !important;
-  width: 100px !important;
+  height: 160px !important;
+  width: 160px !important;
   box-shadow: none !important;
   border: 1px solid $white;
   border-radius: 100em;
