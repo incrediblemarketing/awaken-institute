@@ -20,6 +20,7 @@ add_image_size( 'page_header_thumb', 1920, 548, true );
 add_image_size( 'blog_row_thumb', 370, 223, true );
 add_image_size( 'post_large', 1430, 796, true );
 add_image_size( 'gallery_thumb', 545, 465, true );
+add_image_size( 'team_thumb', 545, 700, true );
 
 /**
  * Add Image Sizes to Array
@@ -39,6 +40,7 @@ function im_image_sizes( $sizes ) {
 			'blog_row_thumb'     => __( 'Blog Row Thumbnail' ),
 			'post_large'         => __( 'Post Large' ),
 			'gallery_thumb'      => __( 'Gallery Thumbnail' ),
+			'team_thumb'         => __( 'Team Thumbnail' ),
 		)
 	);
 }

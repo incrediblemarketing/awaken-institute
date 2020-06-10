@@ -27,7 +27,7 @@ if ( is_post_type_archive( 'gallery' ) ) :
 endif;
 
 if ( is_page( array( 228, 230 ) ) ) :
-	$cols = 'col-xl-4 col-lg-6 col-11';
+	$cols = 'offset-xl-7 col-xl-4 offset-lg-7 col-lg-5 col-11';
 else :
 	$cols = 'col-xl-6 col-md-8 col-11';
 endif;
