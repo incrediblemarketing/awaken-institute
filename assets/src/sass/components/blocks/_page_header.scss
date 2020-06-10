@@ -39,7 +39,7 @@
 }
 
 .grid--contact--page {
-  background: $white;
+  background: rgba($white, 0.9);
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 40px;
