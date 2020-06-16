@@ -6,6 +6,11 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 90px;
+  flex-direction: column;
+
+  @include mq(md) {
+    flex-direction: row;
+  }
 
   @include mq(xl) {
     margin-bottom: 150px;
@@ -14,19 +19,30 @@
   img {
     width: 100%;
     height: auto;
-    margin-right: 40px;
+    margin-bottom: 35px;
 
     @include mq(md) {
+      margin-right: 40px;
       width: 30vw;
+      margin-bottom: 0;
     }
   }
 
   &:nth-child(even) {
-    flex-direction: row-reverse;
+    flex-direction: column;
+
+    @include mq(md) {
+      flex-direction: row-reverse;
+    }
 
     img {
-      margin-right: 0;
-      margin-left: 40px;
+      margin-bottom: 35px;
+
+      @include mq(md) {
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-left: 40px;
+      }
     }
   }
 }

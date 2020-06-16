@@ -36,6 +36,16 @@
       @include absolute_cover();
     }
   }
+
+  body.page-id-226 & {
+    .image__holder {
+      img {
+        @include mq($until: md) {
+          object-position: 30%;
+        }
+      }
+    }
+  }
 }
 
 .grid--contact--page {
