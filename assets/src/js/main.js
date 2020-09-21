@@ -42,6 +42,17 @@
 						}, 1000);
 
 						$('#menu-item-1273 a').attr("target","_blank");
+
+						
+							$('.popup-youtube').magnificPopup({
+								disableOn: 700,
+								type: 'iframe',
+								mainClass: 'mfp-fade',
+								removalDelay: 160,
+								preloader: false,
+								fixedContentPos: false
+							});
+					
 				},
 				headingRotator: function() {
 					setInterval(function(){
